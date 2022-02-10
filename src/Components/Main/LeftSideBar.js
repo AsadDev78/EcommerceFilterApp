@@ -1,51 +1,11 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 class LeftSideBar extends React.Component {
   render() {
-    let mini,maxi;
     return (
-      <div className="sidebar">
+      <div className="sidebar text-center">
         <h1>Filter</h1>
-        <form onSubmit={(e) => {
-            this.props.onSubmit(e,this.props.min, this.props.max);
-          }} >
-          Price
-          <div>
-            <input
-            value ={this.props.min}
-              placeholder="Min"
-              type="number"
-              onChange={this.props.minChange
-              //   (e) => {
-              //   // mini=e.target.value
-              //   // console.log(e.target.value);
-              //   // console.log(mini);
-              //   // this.props.filterByPriceMin(e.target.value);
-                
-              //   this.setState({ min: e.target.value });
-              //   console.log(this.props.min)
-              // }
-              }
-            />
-            <input
-              placeholder="Max "
-              type="number"
-              value ={this.props.max}
-              onChange={this.props.maxChange}
-              // {(e) => {
-              //   // maxi=e.target.value;
-              //   // console.log(maxi);
-              //   this.setState({ max: e.target.value });
-              //   // this.props.filterByPriceMax(e.target.value);
-              // }}
-            />
-          </div>
-          <button
-            
-          >
-            Search
-          </button>
-        </form>
         <div>
           Category
           <div>
@@ -66,6 +26,54 @@ class LeftSideBar extends React.Component {
             </select>
           </div>
         </div>
+        {/* <a class="active" href="#home">
+          Home
+        </a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a> */}
+
+        <form
+          onSubmit={(e) => {
+            this.props.onSubmit(e, this.props.min, this.props.max);
+          }}
+        >
+          Price
+          <div>
+            <input
+              value={this.props.min}
+              placeholder="Min"
+              type="number"
+              onChange={
+                this.props.minChange
+                //   (e) => {
+                //   // mini=e.target.value
+                //   // console.log(e.target.value);
+                //   // console.log(mini);
+                //   // this.props.filterByPriceMin(e.target.value);
+
+                //   this.setState({ min: e.target.value });
+                //   console.log(this.props.min)
+                // }
+              }
+            />
+            <input
+              placeholder="Max "
+              type="number"
+              value={this.props.max}
+              onChange={this.props.maxChange}
+              // {(e) => {
+              //   // maxi=e.target.value;
+              //   // console.log(maxi);
+              //   this.setState({ max: e.target.value });
+              //   // this.props.filterByPriceMax(e.target.value);
+              // }}
+            />
+          </div>
+          <Button  className="mt-3" variant="warning">Search</Button>
+          {/* <button>Search</button> */}
+        </form>
+
         {/* <div>
           Rating
           <div>

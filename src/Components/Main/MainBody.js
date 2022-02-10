@@ -15,7 +15,7 @@ class MainBody extends React.Component {
     return (
       <Container>
         <Row className="mt-3">
-          <Col sm="12" md="2">
+          <Col sm={3} md={2}>
             <LeftSideBar
               filterByCategory={this.props.filterByCategory}
               filterByPriceMin={this.props.filterByPriceMin}
@@ -28,9 +28,9 @@ class MainBody extends React.Component {
               maxChange={this.props.maxChange}
             />
           </Col>
-          <Col xs="12" md="1"></Col>
-          <Col xs="12" md="9">
-            <Row xs="1">
+          <Col sm={3} md={1}></Col>
+          <Col sm={6} md={8}>
+            <Row >
               {this.props.productsData.map((product) => (
                 <Products
                   key={product.id}
