@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: lightcoral;
+    background-color: #04AA6D;
 }
 .header input, .header button{
     padding: 10px 10px;
@@ -56,9 +56,10 @@
   
 .sidebar {
   margin: 0;
+  margin-top: 10px;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #04AA6D;
   /* position: fixed; */
   height: 100%;
   /* overflow: auto; */
@@ -77,7 +78,7 @@
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: #04AA6D;
   color: white;
 }
 
@@ -102,4 +103,8 @@ div.content {
     text-align: center;
     float: none;
   }
+}
+
+.marginRight{
+  margin-left: 10px;
 }

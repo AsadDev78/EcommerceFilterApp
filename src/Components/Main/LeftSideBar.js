@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 class LeftSideBar extends React.Component {
   render() {
@@ -33,7 +33,36 @@ class LeftSideBar extends React.Component {
         <a href="#contact">Contact</a>
         <a href="#about">About</a> */}
 
-        <form
+        <Form
+          onSubmit={(e) => {
+            this.props.onSubmit(e, this.props.min, this.props.max);
+          }}
+        >
+          <Form.Group className="my-3 px-4" controlId="formBasicEmail">
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              value={this.props.min}
+              placeholder="Min"
+              type="number"
+              onChange={this.props.minChange}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3 px-4" controlId="formBasicPassword">
+            {/* <Form.Label>Password</Form.Label> */}
+            <Form.Control
+              placeholder="Max "
+              type="number"
+              value={this.props.max}
+              onChange={this.props.maxChange}
+            />
+          </Form.Group>
+
+          <Button className="mb-2" variant="warning" type="submit">
+            Submit
+          </Button>
+        </Form>
+        {/* <form
           onSubmit={(e) => {
             this.props.onSubmit(e, this.props.min, this.props.max);
           }}
@@ -44,35 +73,17 @@ class LeftSideBar extends React.Component {
               value={this.props.min}
               placeholder="Min"
               type="number"
-              onChange={
-                this.props.minChange
-                //   (e) => {
-                //   // mini=e.target.value
-                //   // console.log(e.target.value);
-                //   // console.log(mini);
-                //   // this.props.filterByPriceMin(e.target.value);
-
-                //   this.setState({ min: e.target.value });
-                //   console.log(this.props.min)
-                // }
-              }
+              onChange={this.props.minChange}
             />
             <input
               placeholder="Max "
               type="number"
               value={this.props.max}
               onChange={this.props.maxChange}
-              // {(e) => {
-              //   // maxi=e.target.value;
-              //   // console.log(maxi);
-              //   this.setState({ max: e.target.value });
-              //   // this.props.filterByPriceMax(e.target.value);
-              // }}
             />
           </div>
-          <Button  className="mt-3" variant="warning">Search</Button>
-          {/* <button>Search</button> */}
-        </form>
+          <button variant="warning">Search</button>
+        </form> */}
 
         {/* <div>
           Rating
