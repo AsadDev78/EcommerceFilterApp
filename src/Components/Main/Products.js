@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class Products extends React.Component {
   render() {
@@ -34,11 +35,14 @@ class Products extends React.Component {
         }}
         className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-sm-12 mx-auto"
       >
-        <Card.Img
+        
+          <Link to="/SingleProduct">
+          <Card.Img
           variant="top"
           src={this.props.images}
           style={{ paddingTop: "10px" }}
         />
+          </Link>
         <Card.Body>
           <Card.Title>{this.props.category}</Card.Title>
           <Card.Text style={{ color: "gray" }}>{this.props.title}</Card.Text>

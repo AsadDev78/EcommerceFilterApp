@@ -4,7 +4,12 @@ import React from "react";
 import Header from "./Components/Header/Header";
 import MainBody from "./Components/Main/MainBody";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import {
+  Routes,
+  Route
+} from "react-router-dom";
+import SingleProduct from "./Components/Products/SingleProduct";
+import Home from "./Components/Home";
 
 class App extends React.Component {
   constructor() {
@@ -103,6 +108,10 @@ class App extends React.Component {
 
       <div className="App">
         <Header SearchBar={this.SearchBar}/>
+        <Routes>
+        <Route path="/SingleProduct" element={<SingleProduct />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
         <MainBody
           productsData={this.state.updatedProductsData}
           filterByCategory={this.filterByCategory}
