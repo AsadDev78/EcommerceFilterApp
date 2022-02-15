@@ -40,6 +40,9 @@ class MainBody extends React.Component {
                   price={product.price}
                   images={product.image}
                   description={product.description}
+                  id={product.id}
+                  rate={product.rating.rate}
+                  count={product.rating.count}
                 />
               ))}
             </Row>

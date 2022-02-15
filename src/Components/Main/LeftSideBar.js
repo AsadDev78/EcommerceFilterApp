@@ -58,7 +58,7 @@ class LeftSideBar extends React.Component {
             />
           </Form.Group>
 
-          <Button className="mb-2" variant="warning" type="submit">
+          <Button className="mb-2" variant="danger" type="submit">
             Submit
           </Button>
         </Form>

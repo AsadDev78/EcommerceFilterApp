@@ -1,10 +1,18 @@
 import React from "react";
-import MainBody from "./Main/MainBody";
-
-class Home extends React.Component {
+import App from '../App'
+import {
+  Routes,
+  Route
+} from "react-router-dom";
+import ProductDetails from "./Products/ProductDetails";
+class RoutingPage extends React.Component {
   render() {
     return (
-        <h1>Home</h1>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/ProductDetails/:id" element={<ProductDetails/>} />
+      </Routes>
+        
     //     <MainBody
     //     productsData={this.state.updatedProductsData}
     //     filterByCategory={this.filterByCategory}
@@ -21,4 +29,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default RoutingPage

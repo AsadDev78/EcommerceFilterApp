@@ -20,14 +20,14 @@ class SearchBar extends React.Component {
           type="text"
           onChange={(e) => {
             this.props.SearchBar(e.target.value);
-            console.log(e.target.value);
+            // console.log(e.target.value);
           }}
           type="search"
           placeholder="Search"
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-warning">Search</Button>
+        {/* <Button variant="outline-danger">Search</Button> */}
       </Form>
     );
   }

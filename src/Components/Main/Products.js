@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class Products extends React.Component {
@@ -36,7 +36,7 @@ class Products extends React.Component {
         className="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-sm-12 mx-auto"
       >
         
-          <Link to="/SingleProduct">
+          <Link to={`/ProductDetails/${this.props.id}`}>
           <Card.Img
           variant="top"
           src={this.props.images}
@@ -46,9 +46,10 @@ class Products extends React.Component {
         <Card.Body>
           <Card.Title>{this.props.category}</Card.Title>
           <Card.Text style={{ color: "gray" }}>{this.props.title}</Card.Text>
-          <Card.Title style={{ color: "red" }}>{this.props.price}</Card.Title>
+          <Card.Title className="text-danger">Rs: {this.props.price}</Card.Title>
+          <Card.Title className="text-warning">Rating {this.props.rate} Reviews({this.props.count})</Card.Title>
           <Button variant="success">Buy Now</Button>
-          <Button variant="warning" className="marginRight" >Add to Cart</Button>
+          <Button variant="danger" className="marginRight" >Add to Cart</Button>
         </Card.Body>
 
         {/* <ListGroup className="list-group-flush mb-3 ">
