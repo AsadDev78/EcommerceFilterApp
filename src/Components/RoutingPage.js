@@ -5,12 +5,17 @@ import {
   Route
 } from "react-router-dom";
 import ProductDetails from "./Products/ProductDetails";
+import Login from "./Header/Auth/Login";
+import SignUp from "./Header/Auth/SignUp";
 class RoutingPage extends React.Component {
   render() {
     return (
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/ProductDetails/:id" element={<ProductDetails/>} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/Signup" element={<SignUp/>} />
+
       </Routes>
         
     //     <MainBody

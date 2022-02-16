@@ -42,7 +42,7 @@ class ProductDetails extends React.Component {
         <Row xs={1} md={2} className="g-4">
           <Col>
             <Card className="noBorder" style={{border:'none'}}>
-              <Card.Img variant="top" src={this.state.SingleProduct.image} />
+              <Card.Img variant="top" src={this.state.SingleProduct.image} alt={"sjj"}/>
               <Card.Body>
                 {/* <Card.Title>{this.state.SingleProduct.title}</Card.Title>
                 <Card.Text>
@@ -70,7 +70,7 @@ class ProductDetails extends React.Component {
                   Color Family
                 </Card.Title>
                 <Card.Title>
-                  Quantity <Button variant="danger">-</Button> 0 <Button variant="success">+</Button>
+                  Quantity <Button variant="danger" size="sm">-</Button> 1 <Button variant="success" size="sm">+</Button>
                 </Card.Title>
                 
 

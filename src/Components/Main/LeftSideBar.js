@@ -45,6 +45,8 @@ class LeftSideBar extends React.Component {
               placeholder="Min"
               type="number"
               onChange={this.props.minChange}
+              min="0"
+              onkeypress="return event.charCode >= 48"
             />
           </Form.Group>
 
@@ -55,12 +57,16 @@ class LeftSideBar extends React.Component {
               type="number"
               value={this.props.max}
               onChange={this.props.maxChange}
+              min="0"
+              onkeypress="return event.charCode >= 48"
+              
             />
           </Form.Group>
-
-          <Button className="mb-2" variant="danger" type="submit">
+          {((this.props.min)< (this.props.max))?(<Button className="mb-2" variant="danger" type="submit">
             Submit
-          </Button>
+          </Button>)
+          :(<Button className="mb-2">Disabled</Button>)
+          }
         </Form>
         {/* <form
           onSubmit={(e) => {

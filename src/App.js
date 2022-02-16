@@ -13,8 +13,8 @@ class App extends React.Component {
       productsData: [],
       updatedProductsData: [],
       cat: "",
-      min: '',
-      max: '',
+      min: "",
+      max: "",
       loader: false
       
     };
@@ -78,13 +78,19 @@ class App extends React.Component {
   }
 
   minChange(e){
-    console.log(e.target.value)
-    this.setState({ min: e.target.value});
-    // console.log(this.props.min)
+    // console.log(Number (e.target.value))
+    // if(e.target.value>0){
+
+      this.setState({ min:Number (e.target.value)});
+    // }
+    // console.log(typeof )
   }
   maxChange(e){
-    console.log(e.target.value)
-    this.setState({ max: e.target.value});
+    // console.log(e.target.value)
+    // if(e.target.value>0){
+
+      this.setState({ max:Number( e.target.value)});
+    // }
     // console.log(this.props.min)
   }
   onSubmit(e,min,max){
@@ -118,7 +124,7 @@ class App extends React.Component {
           minChange={this.minChange}
           maxChange={this.maxChange}
         /></>
-        :<div className="text-center"><img src="https://acegif.com/wp-content/uploads/loading-72.gif" /></div>
+        :<div className="text-center"><img src="https://acegif.com/wp-content/uploads/loading-72.gif"  /></div>
         }
         
       </div>
