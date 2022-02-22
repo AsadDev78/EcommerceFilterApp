@@ -4,19 +4,27 @@ import Logo from "./Logo";
 import "./HeaderStyle.css";
 import { Container, Navbar } from "react-bootstrap";
 import LoginSignup from "./LoginSignup";
+import { Link } from "react-router-dom";
+import ContextAPI from "../ContextApi/ContextAPI";
 
 class Header extends React.Component {
   render() {
     return (
       <Navbar bg="success" expand="md" style={{color:'white'}}>
         <Container fluid>
-          <Navbar.Brand href="#" >Navbar scroll</Navbar.Brand>
+        <Link to="/" style={{textDecoration:'none',color:'#fff'}}>
+
+          <Navbar.Brand  style={{color:'#fff'}}>Brand Logo</Navbar.Brand>
+        </Link>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Logo />
             <div className="d-flex">
-            <SearchBar SearchBar={this.props.SearchBar} />
-            <LoginSignup />
+            <SearchBar  />
+            <LoginSignup 
+              CartProducts={this.context.CartProducts}
+              qty={this.context.qty}
+            />
             </div>
             
           </Navbar.Collapse>
@@ -25,6 +33,7 @@ class Header extends React.Component {
     );
   }
 }
+Header.contextType = ContextAPI
 export default Header;
 
 // <div className='header'>

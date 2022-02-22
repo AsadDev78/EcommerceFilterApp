@@ -5,6 +5,7 @@ import {
   FormControl,
  
 } from "react-bootstrap";
+import ContextAPI from "../ContextApi/ContextAPI";
 class SearchBar extends React.Component {
   render() {
     return (
@@ -19,7 +20,7 @@ class SearchBar extends React.Component {
         <FormControl
           type="text"
           onChange={(e) => {
-            this.props.SearchBar(e.target.value);
+            this.context.SearchBar(e.target.value);
             // console.log(e.target.value);
           }}
           type="search"
@@ -32,4 +33,5 @@ class SearchBar extends React.Component {
     );
   }
 }
+SearchBar.contextType = ContextAPI
 export default SearchBar;

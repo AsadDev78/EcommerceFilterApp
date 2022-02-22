@@ -2,6 +2,7 @@ import React from "react";
 import LeftSideBar from "./LeftSideBar";
 import Products from "./Products";
 import { Col, Row } from "react-bootstrap";
+import ContextAPI from "../ContextApi/ContextAPI";
 
 
   /* <Container fluid>
@@ -18,20 +19,20 @@ class MainBody extends React.Component {
           <Col sm={12} md={"auto"} lg={"auto"}></Col>
           <Col  sm={12} md={3}>
             <LeftSideBar 
-              filterByCategory={this.props.filterByCategory}
-              filterByPriceMin={this.props.filterByPriceMin}
-              filterByPriceMax={this.props.filterByPriceMax}
-              cat={this.props.cat}
-              min={this.props.min}
-              max={this.props.max}
-              onSubmit={this.props.onSubmit}
-              minChange={this.props.minChange}
-              maxChange={this.props.maxChange}
+              // filterByCategory={this.props.filterByCategory}
+              // filterByPriceMin={this.props.filterByPriceMin}
+              // filterByPriceMax={this.props.filterByPriceMax}
+              // cat={this.props.cat}
+              // min={this.props.min}
+              // max={this.props.max}
+              // onSubmit={this.props.onSubmit}
+              // minChange={this.props.minChange}
+              // maxChange={this.props.maxChange}
             />
           </Col>
           <Col sm={12} md={8}>
             <Row >
-              {this.props.productsData.map((product) => (
+              {this.context.updatedProductsData.map((product) => (
                 <Products
                   key={product.id}
                   product={product}
@@ -43,6 +44,7 @@ class MainBody extends React.Component {
                   id={product.id}
                   rate={product.rating.rate}
                   count={product.rating.count}
+                  AddToCart={this.props.AddToCart}
                 />
               ))}
             </Row>
@@ -74,6 +76,7 @@ class MainBody extends React.Component {
     );
   }
 }
+MainBody.contextType = ContextAPI
 export default MainBody;
 
 // {this.props.getData.map((product) =>(

@@ -42,7 +42,7 @@ class ProductDetails extends React.Component {
         <Row xs={1} md={2} className="g-4">
           <Col>
             <Card className="noBorder" style={{border:'none'}}>
-              <Card.Img variant="top" src={this.state.SingleProduct.image} alt={"sjj"}/>
+              <Card.Img variant="top" src={this.state.SingleProduct.image} alt="description of image"/>
               <Card.Body>
                 {/* <Card.Title>{this.state.SingleProduct.title}</Card.Title>
                 <Card.Text>
@@ -72,8 +72,6 @@ class ProductDetails extends React.Component {
                 <Card.Title>
                   Quantity <Button variant="danger" size="sm">-</Button> 1 <Button variant="success" size="sm">+</Button>
                 </Card.Title>
-                
-
               </Card.Body>
             </Card>
           </Col>

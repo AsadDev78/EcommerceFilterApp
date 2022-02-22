@@ -5,11 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
 import RoutingPage from "./Components/RoutingPage";
+import { AuthProvider } from "./Components/ContextApi/ContextAPI";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <RoutingPage />
-  </BrowserRouter>,
+  <AuthProvider>
+    <BrowserRouter>
+      <RoutingPage />
+    </BrowserRouter>
+  </AuthProvider>,
   document.getElementById("root")
 );
 

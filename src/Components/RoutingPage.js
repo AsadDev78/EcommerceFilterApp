@@ -7,6 +7,7 @@ import {
 import ProductDetails from "./Products/ProductDetails";
 import Login from "./Header/Auth/Login";
 import SignUp from "./Header/Auth/SignUp";
+import Carts from "./Header/Carts";
 class RoutingPage extends React.Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class RoutingPage extends React.Component {
         <Route path="/ProductDetails/:id" element={<ProductDetails/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<SignUp/>} />
+        <Route path="/Cart" element={<Carts/>} />
 
       </Routes>
         

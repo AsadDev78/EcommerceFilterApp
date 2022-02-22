@@ -58,8 +58,9 @@
   margin: 0;
   margin-top: 10px;
   padding: 0;
-  width: 200px;
-  background-color: #04AA6D;
+  width: 100%;
+  background-color: #198754;
+  color: #fff;
   /* position: fixed; */
   height: 100%;
   /* overflow: auto; */
@@ -266,3 +267,12 @@ h2 {
   .links {
     text-decoration: none;
   }
+  .super{
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    padding: 2px;
+    border-radius: 50%;
+    color: black;
+}
+  

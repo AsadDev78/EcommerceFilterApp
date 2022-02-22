@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ContextAPI from "../ContextApi/ContextAPI";
 
 class Products extends React.Component {
   render() {
@@ -49,7 +50,7 @@ class Products extends React.Component {
           <Card.Title className="text-danger">Rs: {this.props.price}</Card.Title>
           <Card.Title className="text-warning">Rating {this.props.rate} Reviews({this.props.count})</Card.Title>
           <Button variant="success">Buy Now</Button>
-          <Button variant="danger" className="marginRight" >Add to Cart</Button>
+          <Button variant="danger" className="marginRight" onClick={() => {this.context.AddToCart(this.props.id)}} >Add to Cart</Button>
         </Card.Body>
 
         {/* <ListGroup className="list-group-flush mb-3 ">
@@ -58,4 +59,5 @@ class Products extends React.Component {
     );
   }
 }
+Products.contextType = ContextAPI
 export default Products;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import ContextAPI from "../ContextApi/ContextAPI";
 
 class LeftSideBar extends React.Component {
   render() {
@@ -10,11 +11,11 @@ class LeftSideBar extends React.Component {
           Category
           <div>
             <select
-              value={this.props.cat}
+              // value={this.props.cat}
               onChange={(e) => {
                 console.log(e.target.value);
                 // {()=> this.props.filterByCategory(e.target.value)}
-                this.props.filterByCategory(e.target.value);
+                this.context.filterByCategory(e.target.value);
                 this.setState({ cat: e.target.value });
               }}
             >
@@ -26,27 +27,23 @@ class LeftSideBar extends React.Component {
             </select>
           </div>
         </div>
-        {/* <a class="active" href="#home">
-          Home
-        </a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a> */}
+        
 
         <Form
           onSubmit={(e) => {
-            this.props.onSubmit(e, this.props.min, this.props.max);
+            this.context.onSubmit(e, this.context.min, this.context.max);
           }}
         >
           <Form.Group className="my-3 px-4" controlId="formBasicEmail">
             <Form.Label>Price</Form.Label>
             <Form.Control
-              value={this.props.min}
+              value={this.context.min}
               placeholder="Min"
               type="number"
-              onChange={this.props.minChange}
+              onChange={this.context.minChange}
               min="0"
-              onkeypress="return event.charCode >= 48"
+              // onKeyPress="return event.charCode >= 48"
+              pattern="^[0-9]"
             />
           </Form.Group>
 
@@ -55,14 +52,15 @@ class LeftSideBar extends React.Component {
             <Form.Control
               placeholder="Max "
               type="number"
-              value={this.props.max}
-              onChange={this.props.maxChange}
+              value={this.context.max}
+              onChange={this.context.maxChange}
               min="0"
-              onkeypress="return event.charCode >= 48"
+              pattern="^[0-9]"
+              // onKeyPress="return event.charCode >= 48"
               
             />
           </Form.Group>
-          {((this.props.min)< (this.props.max))?(<Button className="mb-2" variant="danger" type="submit">
+          {((this.context.min)< (this.context.max))?(<Button className="mb-2" variant="danger" type="submit">
             Submit
           </Button>)
           :(<Button className="mb-2">Disabled</Button>)
@@ -108,4 +106,5 @@ class LeftSideBar extends React.Component {
     );
   }
 }
+LeftSideBar.contextType = ContextAPI
 export default LeftSideBar;
